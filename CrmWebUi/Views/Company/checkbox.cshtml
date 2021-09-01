@@ -1,0 +1,160 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<calisan>
+@{
+    Layout = "_Layout";
+}
+@{
+    @*<select id="selectim" width="200px">
+              @foreach (var item in Model)
+              {
+                  <option class="lis" value="@item.Id">@item.Name</option>
+              }
+
+          </select>
+
+        <script>
+            $(document).ready(function () {
+                $(document).on('change', '#selectim', function () {
+                    var onur = $('#selectim option:selected').val();
+                    $.ajax({
+                        method: 'post',
+                        url: "/company/anasayfa",
+                        data: { q: onur },
+                    }).done(function (d) {
+                        console.log(q);
+                    })
+                })
+
+            })
+
+        </script>*@
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="man" id="cek1">
+        <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="woman" id="cek2">
+        <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+        </label>
+    </div>
+
+
+    <div class="form-check">
+        <input class="form-check-input cbMalzeme" type="checkbox" value="karpuz" id="cek6">
+        <label class="form-check-label" for="flexCheckDefault">
+            Karpuz
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input cbMalzeme" type="checkbox" value="kavun" id="cek5">
+        <label class="form-check-label" for="flexCheckDefault">
+            Kavun
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input cbMalzeme" type="checkbox" value="erik" id="cek3">
+        <label class="form-check-label" for="flexCheckDefault">
+            Erik
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input cbMalzeme" type="checkbox" value="kiraz" id="cek4">
+        <label class="form-check-label" for="flexCheckDefault">
+            Kiraz
+        </label>
+    </div>
+
+
+    <script>
+
+
+
+        $(document).ready(function () {
+
+            $(document).on('change', '#cek1', function () {
+                var c1 = $('#cek1');
+                if (c1.prop("checked")) {
+                    console.log(c1.val())
+                } else {
+                    console.log(c1.val() + " çıkarıldı")
+                }
+            })
+
+
+            
+            var malzemeler = [];
+            $(document).on('change', '.cbMalzeme', function () {
+                var cb = $(this);
+                var cb_val = $(this).val();
+                if (cb.prop("checked")) {
+                    console.log("DİZİYE EKLE => " + cb_val);
+                    malzemeler.push(cb_val);
+                    console.log("malzemeler => " + malzemeler);
+                }
+                else {
+                    var index = malzemeler.indexOf(cb_val);
+                    console.log("DİZİDEN ÇIKAR => " + cb_val + "(" + index + ")");
+                    malzemeler.splice(index, 1);
+                    console.log("malzemeler => " + malzemeler);
+                }
+            })
+
+             
+
+        })
+
+    </script>
+
+
+    <div class="form-check">
+        <input class="form-check-input araba" type="checkbox" value="Mercedes">
+        <label class="form-check-label" for="flexCheckDefault">
+            Mercedes
+        </label>
+    </div><div class="form-check">
+    <input class="form-check-input araba" type="checkbox" value="Volvo">
+    <label class="form-check-label" for="flexCheckDefault">
+        Volvo
+    </label>
+</div><div class="form-check">
+    <input class="form-check-input araba" type="checkbox" value="Hyundai" >
+    <label class="form-check-label" for="flexCheckDefault">
+        Hyundai
+    </label>
+</div><div class="form-check">
+    <input class="form-check-input araba" type="checkbox" value="Mclaren" >
+    <label class="form-check-label" for="flexCheckDefault">
+        Mclaren
+    </label>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var arabalar=[]
+        $(document).on('change', '.araba', function(){
+            var tik = $(this);
+            var deger = tik.val()
+            if (tik.prop("checked")) {
+                console.log(deger)
+                arabalar.push(deger)
+                console.log("arabalar" + arabalar);
+            } else {
+                console.log("çıkarılan +" + deger);
+                var index = arabalar.indexOf(deger);
+                arabalar.splice(index, 1)
+                console.log("arabalar"+arabalar)
+            }
+
+        })
+    })
+</script>
+
+}

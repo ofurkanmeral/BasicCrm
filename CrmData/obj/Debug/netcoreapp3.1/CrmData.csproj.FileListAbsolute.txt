@@ -1,0 +1,45 @@
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.deps.json
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.runtimeconfig.json
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.runtimeconfig.dev.json
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.dll
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.pdb
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csprojAssemblyReference.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.AssemblyInfoInputs.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.AssemblyInfo.cs
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csproj.CoreCompileInputs.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csproj.CopyComplete
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.dll
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.pdb
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.genruntimeconfig.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.deps.json
+C:\Users\PUSULA10\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.runtimeconfig.json
+C:\Users\PUSULA10\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.runtimeconfig.dev.json
+C:\Users\PUSULA10\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.dll
+C:\Users\PUSULA10\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.pdb
+C:\Users\PUSULA10\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\PUSULA10\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csproj.AssemblyReference.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.AssemblyInfoInputs.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.AssemblyInfo.cs
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csproj.CoreCompileInputs.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csproj.CopyComplete
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.dll
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.pdb
+C:\Users\PUSULA10\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.genruntimeconfig.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.deps.json
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.runtimeconfig.json
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.runtimeconfig.dev.json
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.dll
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmData.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\bin\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csprojAssemblyReference.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.AssemblyInfoInputs.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.AssemblyInfo.cs
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csproj.CoreCompileInputs.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.csproj.CopyComplete
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.dll
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmData\obj\Debug\netcoreapp3.1\CrmData.genruntimeconfig.cache

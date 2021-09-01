@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CompanyList
+@{ 
+    Layout = "_Layout";
+}
+@{
+    @*foreach (var item in Model.Companies)
+    {
+        <li class="list-group">@item.Name</li>
+    }*@
+
+
+    <div class="col-md-9">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Firma Adı</td>
+                    <td>Address</td>
+                    <td>Telefon Number</td>
+                    <td>Logo</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var iter in Model.Companies)
+                {
+                    <tr>
+                        <td><a href="/Company/@iter.Name">@iter.Name</a></td>
+                        <td>@iter.Adress</td>
+                        <td>@iter.Number</td>
+                        <td><img src="@iter.picture" width="120" height="80" /></td>
+                        <td>
+                            <button class="btn btn-info listButtonNote" type="button" data-id="@iter.Id">NoTes</button>
+                            <button class="btn btn-success btn-xs listButtonEdit " type="button" data-id="@iter.Id">Edit</button>
+                            <button class="btn btn-danger btn-xs listButtonDelete " type="button" data-id="@iter.Id" data-company-name="@iter.Name">Delete</button>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+}

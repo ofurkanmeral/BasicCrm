@@ -1,0 +1,207 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CompiCat
+@{
+    Layout = "_Layout";
+}
+@{
+
+
+    @*foreach (var iter in Model.Categories)
+        {
+            <button class="btn btn-primary">@iter.tür</button>
+        }*@
+
+    <div class="row" style="padding:2%;">
+        <div class="col-md-1">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <img class="card-img-top" style="width:70px; margin-left:78px" src="data:image/png;base64,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" alt="Card image cap">
+                    <br />
+                    <h6 class="card-title" style="margin-left:75px">@Model.Companies.Name</h6>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="col-md-10">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <i class="fas fa-folder-open" style="width:30px;height:30px;position:absolute;left:16%"></i><br />
+                    <a href="/company/index" style="color:black;text-decoration:none"><span class="nav-link">SGK Dosyalar</span></a>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-clipboard" style="width:30px;height:30px;position:absolute;left:26%"></i><br />
+                    <span class="nav-link" href="#">Notlar</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-tasks" style="width:30px;height:30px;position:absolute;left:34%"></i><br />
+                    <span class="nav-link" href="#">Görevler</span>
+                </li>
+
+                <li class="nav-item">
+                    <i class="fas fa-map-marked-alt" style="width:30px;height:30px;position:absolute;left:46%"></i><br />
+                    <span class="nav-link" href="#">İletişim Bilgileri</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-file-signature" style="width:30px;height:30px;position:absolute;left:58%"></i><br />
+                    <span class="nav-link" href="#">Sözleşmeler</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-file-invoice-dollar" style="width:30px;height:30px;position:absolute;left:68.5%"></i><br />
+                    <span class="nav-link" href="#">Faturalar</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-fast-backward" style="width:30px;height:30px;position:absolute;left:80%"></i><br />
+                    <span class="nav-link" href="#">Geçmiş Dönem</span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <ul style="margin-top:30px; list-style:none">
+                <li><button class="btn btn-outline-dark btn-lg" id="kullanici_ekle" data-toggle="modal" data-target="#kullanicim" data-val="@Model.Companies.Id">Kullanıcı Ekle</button></li>
+                <li></li>
+                <span><b>Firma Adı</b></span>
+                <li><span><i class="fas fa-address-card" style="width:25px;height:25px; margin-right:5px"></i>@Model.Companies.Name</span></li>
+                <hr />
+                <span><b>Adress</b></span>
+                <li><span><i class="fas fa-map-marker-alt" style="width:25px;height:25px; margin-right:5px"></i>@Model.Companies.Adress</span></li>
+                <hr />
+                <span><b>Telefon Numarası</b></span>
+                <li><span><i class="fas fa-phone-square-alt" style="width:25px;height:25px; margin-right:5px"></i>@Model.Companies.Number</span></li>
+                <hr />
+                <span><b>Notlar</b></span>
+                @foreach (var iter in Model.Companies.notes)
+                {
+                    <li><span><i class="far fa-sticky-note" style="width:25px;height:25px; margin-right:5px"></i>@iter.Text</span></li>
+                }
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <table id="calisanlar" class="table table-hover ">
+
+                <thead>
+                    <tr>
+                        <td>Calısan Adı</td>
+                        <td>Calısan Soyadı</td>
+                        <td>Prim Günü</td>
+                        <td>İşe Giriş Tarihi</td>
+                        <td>Bağlı Kanun</td>
+                        <td></td>
+                        <td>Güncelle</td>
+                        <td>Sil</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var iter in Model.Companies.calisanlar)
+                    {
+                        <tr class="table-secondary">
+                            <td>@iter.Name</td>
+                            <td>@iter.Soyad</td>
+                            @if (Convert.ToInt32(@iter.Prim) > 300)
+                            {
+                                <td><button class="btn btn-success btn-sm">Etkin</button></td>
+                            }
+                            else
+                            {
+                                <td><button class="btn btn-danger btn-sm">Edilgen</button></td>
+                            }
+
+                            <td>@iter.iseGiris</td>
+                            <td>
+                                @iter.Kanun
+                            @if (iter.Kanun == "5485")
+                            {
+                                <button class="btn btn-info btn-sm">Yararlanır</button>
+                            }
+                        </td>
+                        <td></td>
+                        <td><button id="kullanici" data-val="@iter.Id" data-toggle="modal" data-target="#kullanicim" class="btn btn-outline-success btn-sm">Kullanıcıya Git</button></td>
+                        <td><button class="btn btn-outline-danger btn-sm">Sil</button></td>
+                    </tr>
+                }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="modal fade" id="kullanicim" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Düzenle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="ekle_button"class="btn btn-primary">Kullanıcı Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            $(document).on('click', '#kullanici', function () {
+                var btn = $(this);
+                var id = btn.data('val');
+                console.log(id)
+                var modal = $('#kullanicim');
+               
+                modal.find('.modal-body').load('/company/kullanicimodal/'+id)
+                modal.modal('show')
+                })
+        })
+
+        $(document).ready(function () {
+            var id = 0
+            var modal = $('#kullanicim');
+            $(document).on('click', '#kullanici_ekle', function () {
+                var btn = $(this);
+                id = btn.data('val');
+                $('#ekle_button').attr('data-val',id)
+                modal.find('.modal-body').load('/company/kullaniciekle')
+                modal.modal('show')
+            })
+            $('#ekle_button').click(function () {
+                var btn=$(this)
+                var id = btn.data('val');
+                console.log(id)
+                var d1 = modal.find('#ad').val()
+                var d2 = modal.find('#soyad').val()
+                var d3 = modal.find('#kanun').val()
+                var d4 = modal.find('#prim').val();
+                
+                var d5=id
+                //var formdata = new FormData();
+                //formdata.append(d1)
+                //formdata.append(d2)
+                //formdata.append(d3)
+                //formdata.append(d4)
+                //formdata.append(d5)
+                $.ajax({
+                    method: 'post',
+                    url: '/company/kullaniciekle',
+                    data: { f1: d1,f2:d2,f3:d3,f4:d4,f5:d5 }
+                }).done(function () {
+                    console.log("Başarı İle Eklendi")
+                })
+            })
+        })
+
+
+        $(document).ready(function () {
+            $('#calisanlar').DataTable();
+        })
+    </script>
+
+}

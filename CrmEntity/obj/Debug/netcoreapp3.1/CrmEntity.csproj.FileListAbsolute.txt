@@ -1,0 +1,27 @@
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.deps.json
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.csprojAssemblyReference.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.AssemblyInfoInputs.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.AssemblyInfo.cs
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.csproj.CoreCompileInputs.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.deps.json
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.csproj.AssemblyReference.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.AssemblyInfoInputs.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.AssemblyInfo.cs
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.csproj.CoreCompileInputs.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\PUSULA10\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.deps.json
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\bin\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.AssemblyInfoInputs.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.AssemblyInfo.cs
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.csproj.CoreCompileInputs.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.dll
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmEntity\obj\Debug\netcoreapp3.1\CrmEntity.csprojAssemblyReference.cache

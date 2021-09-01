@@ -1,0 +1,26 @@
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.deps.json
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.dll
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.pdb
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.csprojAssemblyReference.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.AssemblyInfoInputs.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.AssemblyInfo.cs
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.csproj.CoreCompileInputs.cache
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.dll
+C:\Users\Onur Furkan Meral\source\repos\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.pdb
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.deps.json
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.dll
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.pdb
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.csproj.AssemblyReference.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.AssemblyInfoInputs.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.AssemblyInfo.cs
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.csproj.CoreCompileInputs.cache
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.dll
+C:\Users\PUSULA10\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.deps.json
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.dll
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\bin\Debug\netcoreapp3.1\CrmServices.pdb
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.AssemblyInfoInputs.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.AssemblyInfo.cs
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.csproj.CoreCompileInputs.cache
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.dll
+C:\Users\Onur Furkan Meral\Desktop\Crm\CrmServices\obj\Debug\netcoreapp3.1\CrmServices.pdb

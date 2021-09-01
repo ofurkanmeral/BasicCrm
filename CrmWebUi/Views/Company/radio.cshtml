@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+@{
+
+
+    <h1>@ViewBag.code</h1>
+    <img src="@ViewBag.code" style="width:200px;height:100px" alt="Alternate Text" />
+    <label class="form-control">İsminizi Giriniz</label>
+    <input class="form-control" id="isim" name="isim" /> 
+
+    <div class="form-check">
+        <input class="form-check-input sehir" type="checkbox" value="istanbul">
+        <label class="form-check-label" for="flexCheckDefault">
+            İstanbul
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input sehir" type="checkbox" value="sakarya">
+        <label class="form-check-label" for="flexCheckDefault">
+            Sakarya
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input sehir" type="checkbox" value="bursa">
+        <label class="form-check-label" for="flexCheckDefault">
+            Bursa
+        </label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="" id="mercedes" data-val="1">
+        <label class="form-check-label" for="flexRadioDefault1">
+            Mercedes
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="araba" id="mclaren" data-val="2">
+        <label class="form-check-label" for="flexRadioDefault1">
+            Mclaren
+        </label>
+    </div>
+    <button type="button" id="gonder" class="btn btn-danger">Gonder</button>
+
+
+
+
+    <script>
+        //$('input[type=radio][name=araba]')
+        $('[name=araba]').change(function () {
+            alert($(this).attr("data-val"));
+        });
+    </script>
+
+    
+}

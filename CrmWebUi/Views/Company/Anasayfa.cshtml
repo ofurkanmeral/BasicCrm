@@ -1,0 +1,354 @@
+﻿@model CompanyList
+@{
+    Layout = "_Layout";
+}
+@{
+   
+
+
+
+    <div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer footer-add" style="display:none;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save-button">Save changes</button>
+                </div>
+                <div class="modal-footer footer-edit" style="display:none;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" id="edit-button">Edit</button>
+                </div>
+                <div class="modal-footer footer-delete" style="display:none;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="delete-button">Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script>
+       $(document).ready(function () {
+           $('#tablom').DataTable();
+       })
+      
+   </script>
+    <script>
+        function trGet(islem, Id, Name, Adress, Number, Picture) {
+            if (islem == "ekleme") {
+                var tr = '<tr>' +
+                    '<td><a href="/company/' + Name + '">' + Name + '</a></td>' +
+                    '<td>' + Adress + '</td>' +
+                    '<td>' + Number + '</td>' +
+                    '<td><img src="' + Picture + '" width="120" height="80" /></td>' +
+                    '<td>' +
+                    '<button class="btn btn-info listButtonNote" type="button" data-id="' + Id + '" > NoTes</button>' +
+                    '<button class="btn btn-success btn-xs listButtonEdit" type="button" data-id="' + Id + '" > Edit</button>' +
+                    '<button class="btn btn-danger btn-xs listButtonDelete" type="button" data-id=' + Id + '" data-company-name=' + Name + '"> Delete</button>' +
+                    '</td>' +
+                    '</tr>';
+            }
+            else if (islem == "guncelleme") {
+
+                var tr = '<td><a href="/company/' + Name + '">' + Name + '</a></td>' +
+                    '<td>' + Adress + '</td>' +
+                    '<td>' + Number + '</td>' +
+                    '<td><img src="' + Picture + '" width="120" height="80" /></td>' +
+                    '<td>' +
+                    '<button class="btn btn-info listButtonNote" type="button" data-id="' + Id + '" > NoTes</button>' +
+                    '<button class="btn btn-success btn-xs listButtonEdit" type="button" data-id="' + Id + '" > Edit</button>' +
+                    '<button class="btn btn-danger btn-xs listButtonDelete" type="button" data-id=' + Id + '" data-company-name=' + Name + '"> Delete</button>' +
+                    '</td>';
+            }
+            else if (islem == 'silme') {
+                var tr='<tr></tr>'
+            }
+            
+            //console.log(Id + "|" + Name + "|" + Adress + "|" + Number + "|" + Picture);
+            //console.log(tr);
+            return tr;
+}
+$(document).ready(() => {
+    $(document).on('click', '#open-modal', (d) => { //modalı açacak button
+        var btn = $(this);
+        var modal = $('#add-modal');
+        console.log("Tamam");
+        modal.find('.footer-add').show();
+        modal.find('.footer-edit').hide();
+        modal.find('.footer-delete').hide();
+        modal.find('.modal-body').load('/company/companyaddform');
+        modal.modal("show");
+    })
+})
+$('#save-button').click(() => {
+    
+    var modal = $('#add-modal');
+    console.log(modal.find("#Name").val())
+    var formData = new FormData();
+    formData.append("Name", modal.find("#Name").val());
+    formData.append("Number", modal.find("#Number").val());
+    formData.append("Adres", modal.find("#Adress").val());
+    formData.append("customer", modal.find('#selectim option:selected').val())
+    $.ajax({
+        method: "Post",
+        url: "/Company/createCompany",
+        data: formData,
+        processData: false,
+        contentType: false,
+
+    }).done((response) => {
+        var tr = trGet("ekleme",response.id, response.name, response.adress, response.number, response.picture);
+        //$("#table-list").first(tr);
+        /*
+        .prependTo("#mytable")
+         * */
+        $('table > tbody > tr:first').before(tr);
+
+        console.log(formData);
+        modal.modal("hide");
+    })
+})
+
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var edit_parent;
+            $(document).on('click', '.listButtonEdit', function () {
+                var btn = $(this);
+                edit_parent = btn.parent().parent("tr");
+                var id = btn.data('id');
+                var modal = $('#add-modal');
+                modal.find('.footer-add').hide();
+                modal.find('.footer-edit').show();
+                modal.find('.footer-delete').hide();
+                modal.find('.modal-body').load("/Company/companyeditform/" + id);
+                $('#edit-button').attr('data-id', id);
+                modal.modal('show');
+            })
+            $('#edit-button').click(function () {
+                var btn = $(this);
+                var id = btn.data('id');
+                var modal=$('#add-modal')
+                var formData = new FormData();
+                formData.append("Name", modal.find('#Name').val());
+                formData.append("Number", modal.find('#Number').val());
+                formData.append("Adress", modal.find('#Adress').val());
+                $.ajax({
+                    method: 'POST',
+                    url: '/Company/editCompany/' + id,
+                    data: formData,
+                    contentType: false,
+                    processData:false,
+
+                }).done(function (response) {
+                    console.log("Başarı ile Güncellendi")
+                    var tr = trGet("guncelleme",response.id, response.name, response.adress, response.number, response.picture);
+                    edit_parent.html(tr);
+                    modal.modal("hide");
+                    //location.reload();
+                })
+            })
+        })
+
+    </script>
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <button type="button" class="btn btn-info" data-toggle="modal" id="open-modal" data-target="#add-modal">Firma Ekle</button>
+          
+
+            @foreach (var iter in Model.notifies)
+            {
+
+                <div class="alert alert-success" role="alert">
+                    <ul style="list-style:none;">
+                        <img src="@iter.calisan.picture" style="width:50px;height:50px;position:absolute;left:0;border-radius:25px;justify-content:center;align-items:center;" />
+                        <li><span class="badge badge-info" style="font-size:15px">@iter.calisan.Name</span></li>
+                        <li><b>@iter.text</b></li>
+
+                      
+                        <br />
+                        <li style="position:absolute;right:0;bottom:20px; font-size:10px">@iter.zaman</li>
+                        <li style="position:absolute;right:0;bottom:5px;font-size:14px">@iter.calisan.company.Name</li>
+                    </ul>
+                </div>
+
+            }
+
+        </div>    
+
+            <script>
+                $(document).ready(function () {
+                    $(document).on('click', '#search', function () {
+                        var dat = $('#q').val();
+                        var url = '/company/anasayfa?q=' + dat;
+                        location.href = url;
+                        /*
+                        $.ajax({
+                            method: "GET",
+                            url: '/company/anasayfa?q='+dat,
+                            data: { q: dat },
+                        }).done(function () {
+                            console.log("basarılı")
+                        })
+                        */
+                    })
+                })
+            </script>
+      
+         
+        <div class="col-md-9">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <i class="fas fa-folder-open" style="width:30px;height:30px;position:absolute;left:16%"></i><br />
+                    <a href="/company/index" style="color:black;text-decoration:none"><span class="nav-link">SGK Dosyalar</span></a>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-clipboard" style="width:30px;height:30px;position:absolute;left:26%"></i><br />
+                    <span class="nav-link" href="#">Notlar</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-tasks" style="width:30px;height:30px;position:absolute;left:34%"></i><br />
+                    <span class="nav-link" href="#">Görevler</span>
+                </li>
+
+                <li class="nav-item">
+                    <i class="fas fa-map-marked-alt" style="width:30px;height:30px;position:absolute;left:46%"></i><br />
+                    <span class="nav-link" href="#">İletişim Bilgileri</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-file-signature" style="width:30px;height:30px;position:absolute;left:58%"></i><br />
+                    <span class="nav-link" href="#">Sözleşmeler</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-file-invoice-dollar" style="width:30px;height:30px;position:absolute;left:68.5%"></i><br />
+                    <span class="nav-link" href="#">Faturalar</span>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-fast-backward" style="width:30px;height:30px;position:absolute;left:80%"></i><br />
+                    <span class="nav-link" href="#">Geçmiş Dönem</span>
+                </li>
+                </ul>
+                <table id="tablom" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>Firma Adı</td>
+                            <td>Address</td>
+                            <td>Telefon Number</td>
+                            <td>Logo</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody id="table-list">
+                        @foreach (var iter in Model.Companies)
+                        {
+                            <tr data-company-id="@iter.Id" class="table-secondary">
+                                <td><a href="/company/@iter.Name" style="color:black">@iter.Name</a></td>
+                                <td>@iter.Adress</td>
+                                <td>@iter.Number</td>
+                                <td><img src="@iter.picture" width="60" height="40" /></td>
+                                <td>
+                                    <button class="btn btn-info listButtonNote btn-sm" type="button" data-id="@iter.Id">NoTes</button>
+                                    <button class="btn btn-success btn-xs listButtonEdit btn-sm " type="button" data-id="@iter.Id">Edit</button>
+                                    <button class="btn btn-danger btn-xs listButtonDelete btn-sm" type="button" data-id="@iter.Id" data-company-name="@iter.Name">Delete</button>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    
+    }
+<script>
+    $(document).ready(function () {
+        $(document).on('click', '.listButtonNote', function () {
+            var btn = $(this);
+            var id = btn.data('id');
+            var modal = $('#add-modal');
+            modal.find('.modal-body').load('/Company/notePartial/' + id)
+            modal.modal('show'); 
+        })
+    })
+</script>
+
+
+
+
+<script>
+    $(document).ready(() => {
+        var delete_parent;
+        $(document).on('click', '.listButtonDelete', function() {
+            var btn = $(this);
+            delete_parent = btn.parent().parent("tr");
+            
+            var id = btn.data("id");
+            console.log(id);
+            var modal = $('#add-modal');
+            modal.find('.footer-add').hide();
+            modal.find('.footer-edit').hide();
+            modal.find('.footer-delete').show();
+            modal.find('.modal-body').html("<h3>Silmek İstediğinize Emin Misiniz</h3>");
+            $("#delete-button").attr("data-id", id);
+            modal.modal('show');
+        })
+        $('#delete-button').click(function()  {
+            var btn = $(this)
+            var id = btn.data('id');
+            var modal = $('#add-modal');
+            console.log(id)
+            $.ajax({
+                method: 'POST',
+                url:"/company/deletemCompany/"+id
+            }).done((response) => {
+               // var tr = trGet("silme", response.id, response.name, response.adress, response.number, response.picture);
+                delete_parent.remove();
+                console.log("başarılı")
+                modal.modal("hide");
+            })
+        })
+    })
+    
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        var Ids = [];
+        $("tr[data-company-id]").each(function (i, e) {
+            //console.log(i)
+          //  console.log(e)
+            Ids.push($(e).data("company-id"));
+           
+           
+        })
+        var like = $("tr[data-company-id=" + 5 + "]");
+        console.log(like.data('company-id'))
+    })
+</script>

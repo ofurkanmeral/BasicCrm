@@ -1,0 +1,272 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CompanyList
+@{
+    Layout = "_Layout";
+}
+@{
+    <div class="row">
+        <button class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#company-add-modal">Add Company</button>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                @foreach (var iter in Model.Categories)
+                {
+                    <li class="list-group-item disabled" aria-disabled="true">@iter.tür</li>
+                }
+
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>Firma Adı</td>
+                        <td>Address</td>
+                        <td>Telefon Number</td>
+                        <td>Logo</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var iter in Model.Companies)
+                    {
+                        <tr>
+                            <td>@iter.Name</td>
+                            <td>@iter.Adress</td>
+                            <td>@iter.Number</td>
+                            <td><img src="@iter.picture" width="120" height="80" /></td>
+                            <td>
+                                <button class="btn btn-info listButtonNote" type="button" data-id="@iter.Id">NoTes</button>
+                                <button class="btn btn-success btn-xs listButtonEdit " type="button" data-id="@iter.Id">Edit</button>
+                                <button class="btn btn-danger btn-xs listButtonDelete " type="button" data-id="@iter.Id" data-company-name="@iter.Name" >Delete</button>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '.listButtonDelete', () => {
+                var btn = $(this);
+                var id = btn.data('id');
+                var modal = $('#company-delete-modal')
+                modal.find('.modal-body').html("<h3>Silmek İstediğinize Emin misiniz</h3>")
+                modal.modal('show');
+            })
+        })
+    </script>
+   
+
+
+
+    <div class="modal fade" id="company-note-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Notlar</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="note-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="company-add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Company Add Form</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="company-add-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="gonder">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="company-edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Company Edit Form</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="modalEditButton">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="company-delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Company Delete Form</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-primary" id="modalDeleteButton">Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '.listButtonNote', function () {
+                var btn = $(this);
+                var id = btn.data("id");
+                var modal=$("#company-note-modal");
+                modal.find(".modal-body").load("/Company/notePartial/" + id);
+                modal.modal("show");
+            });
+
+
+
+            $(document).on('click', '.listButtonEdit', function () {
+                var btn = $(this);
+                var id = btn.data("id");
+                var modal = $("#company-edit-modal");
+                modal.find(".modal-body").load("/Company/companyform/" + id);
+                $("#modalEditButton").attr("data-id", id);
+                modal.modal("show");
+
+            });
+            $("#modalEditButton").click(function () {
+                var modal = $("#company-edit-modal");
+                var company_id = $(this).data("id");
+                var formdata = new FormData();
+                formdata.append("Name", modal.find("#Name").val());
+                formdata.append("Adress", modal.find("#Adress").val());
+                formdata.append("Number", modal.find("#Number").val());
+                $.ajax({
+                    method: 'POST',
+                    url: 'Company/companyEdit/' + company_id,
+                    data: formdata,
+                    beforeSend: function () {
+
+                    },
+                    success: function () {
+
+                    },
+                    error: function () {
+
+                    }
+                })
+            });
+
+
+            $(document).on('click', '.listButtonDelete', function () {
+                var btn = $(this);
+                var id = btn.data("id");
+                var company_name = btn.data("company-name");
+                var modal = $("#company-delete-modal");
+                modal.find(".modal-title").text(company_name);
+                modal.find(".modal-body").html("<h3>Silmek istediğinizden emin misiniz ?</h3>");
+                $("#modalDeleteButton").attr("data-id", id);
+                modal.modal("show");
+            });
+            $("#modalDeleteButton").click(function () {
+                var company_id = $(this).data("id");
+                $.ajax({
+                    method: 'post',
+                    url: '/company/delete/' + company_id,
+
+                }).done(() => {
+                    console.log(d);
+                })
+            });
+        });
+            /*
+        var id = -1;
+        var modalbody = $('#note-body');
+        $(function () {
+            $('#note-modal').on('shown.bs.modal', (e) => {
+                console.log("modal açıldı");
+                var btn = $(e.relatedTarget);
+                id = btn.data('company-id');
+                console.log("id = " + id);
+                modalbody.load("/Company/notePartial/" + id);
+            })
+        })
+
+        $(function () {
+            var modal = $("#company-edit-modal");
+            var modalbody = modal.find(".modal-body");
+            $('#company-edit-modal').on('shown.bs.modal', (e) => {
+                var btn = $(e.relatedTarget);
+                id = btn.data('id');
+                modalbody.load("/Company/companyform/" + id);
+                $("#modalEditButton").attr("data-id", id);
+            })
+
+            $("#modalEditButton").click(function () {
+                $(this).attr("data-id");
+            });
+        })
+
+        $(function () {
+            $('#company-add-modal').on('shown.bs.modal', (e) => {
+                var btn = $(e.relatedTarget);
+                //id = btn.data('company-id');
+                $('#company-add-body').load("/Company/companyform");
+            })
+            $('#gonder').click((e) => {
+                var name = $('#name').val()
+                var adres = $('#Adress').val();
+                var number = $('#Number').val();
+                $.ajax({
+                    method: "POST",
+                    url: "/company/create",
+                    data: {d1:name,d2:adres,d3:number}
+                }).done((d) => {
+                    console.log("Başarılı")
+                    console.log(d);
+                    $('#company-add-modal').hide()
+                })
+            })
+        })
+       
+        })
+        */
+        //$(function () {
+        //    var modal = $("#company-delete-modal");
+        //    var modalbody = modal.find(".modal-body");
+        //    $('#company-edit-modal').on('shown.bs.modal', (e) => {
+        //        var btn = $(e.relatedTarget);
+        //        id = btn.data('id');
+        //        modalbody.load("/Company/companyform/" + id);
+        //        $("#modalEditButton").attr("data-id", id);
+        //    })
+
+        //    $("#modalEditButton").click(function () {
+        //        $(this).attr("data-id");
+        //    });
+        //})
+
+      
+    </script>
+}
